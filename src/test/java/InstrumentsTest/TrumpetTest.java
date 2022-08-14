@@ -13,7 +13,7 @@ public class TrumpetTest {
 
     @Before
     public void before() {
-        trumpet = new Trumpet("Bach 180S37", "Vincent Bach", InstrumentTypes.BRASS, 3);
+        trumpet = new Trumpet("Bach 180S37", "Vincent Bach", InstrumentTypes.BRASS, 3, 200.00, 400.00);
     }
 
     @Test
@@ -39,5 +39,20 @@ public class TrumpetTest {
     @Test
     public void canPlay() {
         assertEquals("Pah-pa-ra", trumpet.play());
+    }
+
+    @Test
+    public void getPriceItemWasBoughtFor() {
+        assertEquals(200.00, trumpet.getBoughtPrice(), 0.01);
+    }
+
+    @Test
+    public void getPriceItemWillBeSoldFor() {
+        assertEquals(400.00, trumpet.getSellingPrice(), 0.01);
+    }
+
+    @Test
+    public void canCalculateMarkup() {
+        assertEquals(200.00, trumpet.calculateMarkup(), 0.01);
     }
 }

@@ -6,8 +6,8 @@ public class Flute extends Instruments implements IPlay {
 
     private int numberOfToneHoles;
 
-    public Flute(String name, String brand, InstrumentTypes instrumentTypes, int numberOfToneHoles) {
-        super(name, brand, instrumentTypes);
+    public Flute(String name, String brand, InstrumentTypes instrumentTypes, int numberOfToneHoles, double buyingPrice, double sellingPrice) {
+        super(name, brand, instrumentTypes, buyingPrice, sellingPrice);
         this.numberOfToneHoles = numberOfToneHoles;
     }
 

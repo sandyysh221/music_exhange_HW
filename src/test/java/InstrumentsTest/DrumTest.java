@@ -13,7 +13,7 @@ public class DrumTest {
 
     @Before
     public void before() {
-        drums = new Drums("The Ringo", "Ludwig Drums", InstrumentTypes.PERCUSSION, 3);
+        drums = new Drums("The Ringo", "Ludwig Drums", InstrumentTypes.PERCUSSION, 3, 1000.00, 2000.00);
     }
 
     @Test
@@ -39,5 +39,20 @@ public class DrumTest {
     @Test
     public void canPlay() {
         assertEquals("Ba dum tss", drums.play());
+    }
+
+    @Test
+    public void getPriceItemWasBoughtFor() {
+        assertEquals(1000.00, drums.getBoughtPrice(), 0.01);
+    }
+
+    @Test
+    public void getPriceItemWillBeSoldFor() {
+        assertEquals(2000.00, drums.getSellingPrice(), 0.01);
+    }
+
+    @Test
+    public void canCalculateMarkup() {
+        assertEquals(1000.00, drums.calculateMarkup(), 0.01);
     }
 }

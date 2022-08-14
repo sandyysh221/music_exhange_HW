@@ -6,8 +6,8 @@ public class Piano extends Instruments implements IPlay {
 
     private int numberOfKeys;
 
-    public Piano(String name, String brand, InstrumentTypes instrumentTypes, int numberOfKeys) {
-        super(name, brand, instrumentTypes);
+    public Piano(String name, String brand, InstrumentTypes instrumentTypes, int numberOfKeys, double buyingPrice, double sellingPrice) {
+        super(name, brand, instrumentTypes, buyingPrice, sellingPrice);
         this.numberOfKeys = numberOfKeys;
     }
 

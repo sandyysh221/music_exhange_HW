@@ -13,7 +13,7 @@ public class FluteTest {
 
     @Before
     public void before() {
-        flute = new Flute("PF-665 E Quantz", "Pearl Flute", InstrumentTypes.WOODWIND, 16);
+        flute = new Flute("PF-665 E Quantz", "Pearl Flute", InstrumentTypes.WOODWIND, 16, 500.00, 800.00);
     }
 
     @Test
@@ -39,5 +39,20 @@ public class FluteTest {
     @Test
     public void canPlay() {
         assertEquals("Tootle ti toot", flute.play());
+    }
+
+    @Test
+    public void getPriceItemWasBoughtFor() {
+        assertEquals(500.00, flute.getBoughtPrice(), 0.01);
+    }
+
+    @Test
+    public void getPriceItemWillBeSoldFor() {
+        assertEquals(800.00, flute.getSellingPrice(), 0.01);
+    }
+
+    @Test
+    public void canCalculateMarkup() {
+        assertEquals(300.00, flute.calculateMarkup(), 0.01);
     }
 }
